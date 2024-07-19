@@ -2,32 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  background-color: rgb(20, 20, 20);
+  margin: 0px ;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.sideBar-btn{
+
+@apply flex items-center gap-2 w-[190px] text-start py-4 px-3 rounded-lg hover:transition-all hover:duration-1000 hover:bg-gradient-to-r from-red via-red  to-gray-900;
+
+}
+.sideBar-btn span:nth-child(2) {
+  @apply w-40 
+}
+.sideBar-btn span:nth-child(3) {
+  @apply hidden
+}
+.sideBar-btn:hover span:nth-child(3)
+{
+  @apply block
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.sideBar-btn:hover span:nth-child(3)
+{
+  @apply block;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.listproduits::-webkit-scrollbar{
+  width: 10px;
+  border-radius: 10px;
+  color: white;
+}
+input::placeholder{
+  color: white;
+  font-size:small;
+}
+.auth input{
+  @apply p-2 rounded-lg border border-gray-300 bg-lightGray outline-none w-full 
+  
 }
