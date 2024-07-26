@@ -1,27 +1,43 @@
-import Loginpage from "./(authentication)/login/page";
-import EventSection from "./_components/homepage/eventsection";
-import ListProduits from "./_components/homepage/listproduis";
-import NavBar from "./_components/homepage/navbar";
+"use client"
+import { useEffect , useState } from "react";
+import EventSection from "./@eventProduits/page";
 import SideBar from "./_components/homepage/sidebar";
+import { auth } from "./firebase";
 
 
 export default function Home() {
+ 
+  const [user , setUser] = useState(null)
+  const [loading , setLoading] = useState(true)
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log("user is logged in");
+        setUser(user)
+
+      } else {
+        console.log("user is not logged in");
+        
+      }
+
+      setLoading(false)
+    });
+   
+
+  }
+  , []);
+
   return (
-    <main className="m-4">
-     <NavBar/>
-     <div className="flex">
-     <SideBar/>
-     <div className="flex flex-col overflow-hidden  ">
-      <EventSection/>
-      <ListProduits/>
-
-     </div>
-
-
-     </div>
-
+  
+      <main className="m-4">
      
-     
-    </main>
+      <div className="flex">
+      <SideBar/>
+      </div>
+     </main>
+    
+    
+
+   
   );
 }

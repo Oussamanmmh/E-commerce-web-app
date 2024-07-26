@@ -42,7 +42,7 @@ export default function NavBar() {
                 {/*search bar*/}
                 <div>
                     <div className="bg-darkGray rounded-3xl relative flex gap-10 px-4 py-2">
-                        <button className="rounded-3xl bg-lightGray px-4 flex items-center gap-2 relative" onClick={toggleDropdown}>
+                        <button className="rounded-3xl bg-lightGray px-4 flex items-center gap-2 relative" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
                             <span>All categories</span>
                             <span>{arrow}</span>
                             {dropdownVisible && (
@@ -80,9 +80,9 @@ export default function NavBar() {
                 </div>
 
                 <div className="flex gap-10 justify-between">
-                    <button className="hover:bg-darkGray rounded-full p-2 " >
+                    <a href='/user/notification' className="hover:bg-darkGray rounded-full p-2 " >
                         {bell}
-                    </button>
+                    </a >
                     <button className="hover:bg-darkGray rounded-full p-2 " >
                         {heart}
                     </button>

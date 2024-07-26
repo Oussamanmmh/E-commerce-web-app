@@ -10,9 +10,9 @@ export default function SideBar() {
   
     return(
         <>
-        <section className="flex flex-col font font-semibold h-full justify-between gap-32 text-white mt-10">
+        <section className="flex flex-col font font-semibold h-full justify-between gap-14 text-white mt-10">
             
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
                  <h1 className="text-3xl font-bold">Explore</h1>
                     <button className="sideBar-btn">
                         <span>{cat}</span>
@@ -30,24 +30,21 @@ export default function SideBar() {
                         <span>Sell with us</span>
                         <span>{arrow}</span>
                     </button>
-                    <button className="sideBar-btn">
-                        <span>{order}</span>
-                        <span>Track order</span>
+                    
+                    <a  href="/admin/addproduct"className="sideBar-btn">
+                        <span>{star}</span>
+                        <span>Add products</span>
                         <span>{arrow}</span>
-                    </button>
-                    <button className="sideBar-btn">
-                        <span>{blog}</span>
-                        <span>Blog</span>
-                        <span>{arrow}</span>
-                    </button>
+                    </a>
+                   
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
                 <hr className="border-white"/>
-                   <button className="sideBar-btn">
+                   <a href="/user/account" className="sideBar-btn">
                         <span>{person}</span>
                         <span>Accout</span>
                         <span>{arrow}</span>
-                    </button>
+                    </a >
                     <button className="sideBar-btn">
                         <span>{settings}</span>
                         <span>Settings</span>

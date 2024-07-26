@@ -4,9 +4,12 @@ import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/app/firebase";
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function Loginpage(){
-    const {register , handleSubmit , watch ,formState:{errors}}= useForm() 
+    const router = useRouter()
+    const {register , handleSubmit  , formState:{errors}}= useForm() 
     const [disabled , setDisabled] = useState(false) 
     const [error ,setError] = useState(null)
     const form = useRef()
@@ -16,10 +19,12 @@ export default function Loginpage(){
          .then(
             (userCredential)=>{
                 const user = userCredential.user
-                console.log(user)
+              
                 form.current.elements["email"].value = ''
                 form.current.elements["password"].value = ''
                 setDisabled(false)
+                router.push('/')
+                
                 
             })
             .catch((error)=>{

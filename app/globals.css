@@ -4,7 +4,6 @@
 
 :root{
   background-color: rgb(20, 20, 20);
-  margin: 0px ;
 }
 
 .sideBar-btn{
@@ -40,4 +39,11 @@ input::placeholder{
 .auth input{
   @apply p-2 rounded-lg border border-gray-300 bg-lightGray outline-none w-full 
   
+}
+
+ div .span-account{
+  @apply  text-lg font-bold w-[150px]
+}
+div:has(.span-account){
+  @apply  flex items-center
 }
